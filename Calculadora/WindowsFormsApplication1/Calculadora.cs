@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1
     public partial class Calculadora : Form
     {
         Calculator calculator = new Calculator();
+        CalculatorBin calculatorBin = new CalculatorBin();
         public Calculadora()
         {
             InitializeComponent();
@@ -150,10 +151,10 @@ namespace WindowsFormsApplication1
         private void ResetBin(object sender, EventArgs e)
         {
             ResultBin.Text = "0";
-            calculator.simbolinho = null;
-            calculator.valor = 0;
-            calculator.valor2 = 0;
-            calculator.total = 0;
+            calculatorBin.simbolinho = null;
+            calculatorBin.valor = 0;
+            calculatorBin.valor2 = 0;
+            calculatorBin.total = 0;
             simbol = false;
             algo = false;
 
@@ -169,44 +170,53 @@ namespace WindowsFormsApplication1
         {
             Button clicked = sender as Button;
             // ver se algo foi digitado
-            if (algo) calculator.sl = Convert.ToDouble(ResultBin.Text);
-            if (batata && algo) { calculator.valor = calculator.sl; batata = false; }
+            if (algo) calculatorBin.sl = Convert.ToDouble(ResultBin.Text);
+            if (batata && algo) { calculatorBin.valor = calculatorBin.sl; batata = false; }
             // caso aperte um botao de sinal ja tendo definido uma conta anterior
-            if (calculator.simbolinho != null)
+            if (calculatorBin.simbolinho != null)
             {
                 // mesmo que no total exceto por colocar o simbolo clicado para a prox conta
-                calculator.calcular();
-                ResultBin.Text = calculator.total.ToString();
-                calculator.sl = Convert.ToDouble(ResultBin.Text);
-                calculator.valor = calculator.sl;
-                calculator.simbolinho = clicked.Text;
+                calculatorBin.calcular();
+                ResultBin.Text = calculatorBin.total.ToString();
+                calculatorBin.sl = Convert.ToDouble(ResultBin.Text);
+                calculatorBin.valor = calculator.sl;
+                calculatorBin.simbolinho = clicked.Text;
                 somou = true;
             }
             // criar o simbolo
-            if (calculator.simbolinho == null && algo) calculator.simbolinho = clicked.Text;
+            if (calculatorBin.simbolinho == null && algo) calculatorBin.simbolinho = clicked.Text;
             // pegar segundo valor ou primeiro valor
-            if (calculator.valor != 0) calculator.valor2 = calculator.sl;
-            else calculator.valor = calculator.sl;
+            if (calculatorBin.valor != 0) calculatorBin.valor2 = calculatorBin.sl;
+            else calculatorBin.valor = calculatorBin.sl;
+            if (algo && calculatorBin.simbolinho.Equals("ConvertToDec"))
+            {
+                calculatorBin.calcular();
+                ResultBin.Text = calculatorBin.total.ToString();
+                calculatorBin.sl = Convert.ToDouble(ResultBin.Text);
+                calculatorBin.valor = calculatorBin.sl;
+                calculatorBin.simbolinho = null;
+                somou = true;
+            }
             simbol = true;
         }
 
         private void TotalBin(object sender, EventArgs e)
         {
             // testar se existe algum simbolo ativado
-            if (calculator.simbolinho != null)
+            if (calculatorBin.simbolinho != null)
             {
                 // pegar o valor escrito
-                calculator.sl = Convert.ToDouble(Result.Text);
+                calculatorBin.sl = Convert.ToDouble(ResultBin.Text);
                 // usar a funçao da conta
                 calculator.calcular();
                 // digitar o total
-                ResultBin.Text = calculator.total.ToString();
+                ResultBin.Text = calculatorBin.total.ToString();
                 // pegar o valor escrito
-                calculator.sl = Convert.ToDouble(Result.Text);
+                calculatorBin.sl = Convert.ToDouble(ResultBin.Text);
                 // definir que valor sera o valor escrito
-                calculator.valor = calculator.sl;
+                calculatorBin.valor = calculatorBin.sl;
                 // zerador
-                calculator.simbolinho = null;
+                calculatorBin.simbolinho = null;
                 batata = true;
                 somou = true;
             }
