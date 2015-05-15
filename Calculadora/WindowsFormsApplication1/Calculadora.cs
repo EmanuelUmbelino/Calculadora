@@ -104,7 +104,9 @@ namespace WindowsFormsApplication1
             else calculator.valor = calculator.sl;
             // contas que sao executadas na h que clicadas no simbolo
             if (algo && calculator.simbolinho.Equals("√") || algo && calculator.simbolinho.Equals("Sen") || algo && calculator.simbolinho.Equals("Cos") ||
-                algo && calculator.simbolinho.Equals("Tg")) 
+                algo && calculator.simbolinho.Equals("Tg") || algo && calculator.simbolinho.Equals("! In") || algo && calculator.simbolinho.Equals("! Re") ||
+                algo && calculator.simbolinho.Equals("Fi In") || algo && calculator.simbolinho.Equals("Fi Re") || algo && calculator.simbolinho.Equals("ConvertToBin"))
+
             {
                 calculator.calcular();
                 Result.Text = calculator.total.ToString();
@@ -114,6 +116,12 @@ namespace WindowsFormsApplication1
                 somou = true;
             }
             simbol = true;
+        }
+        // verifica se o valor digitado e um numero
+        private void Aprovador(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+                e.Handled = true;
         }
         // inverter sinal
         private void Negativar(object sender, EventArgs e)
@@ -126,6 +134,83 @@ namespace WindowsFormsApplication1
         {
             Result.Text = Result.Text.Remove(Result.Text.Length- 1);
             if (Result.Text == "") Result.Text = "0";
+        }
+
+        private void AddBin(object sender, EventArgs e)
+        {
+            Button clicked = sender as Button;
+            // verificar se tem algum digito escrito na tela
+            algo = true;
+            // respectivamente: testando se vai colocar o primeiro digito; colocando mais um digito; negando o zero;
+            if (simbol && clicked.Text != "," || somou && clicked.Text != ",") { ResultBin.Text = clicked.Text; simbol = false; somou = false; }
+            else if (ResultBin.Text != "0" && clicked.Text != ",") ResultBin.Text += clicked.Text;
+            else if (clicked.Text != ",") ResultBin.Text = clicked.Text;
+        }
+
+        private void ResetBin(object sender, EventArgs e)
+        {
+            ResultBin.Text = "0";
+            calculator.simbolinho = null;
+            calculator.valor = 0;
+            calculator.valor2 = 0;
+            calculator.total = 0;
+            simbol = false;
+            algo = false;
+
+        }
+
+        private void BackspaceBin(object sender, EventArgs e)
+        {
+            ResultBin.Text = ResultBin.Text.Remove(ResultBin.Text.Length - 1);
+            if (ResultBin.Text == "") ResultBin.Text = "0";
+        }
+
+        private void Add_simbolosBin(object sender, EventArgs e)
+        {
+            Button clicked = sender as Button;
+            // ver se algo foi digitado
+            if (algo) calculator.sl = Convert.ToDouble(ResultBin.Text);
+            if (batata && algo) { calculator.valor = calculator.sl; batata = false; }
+            // caso aperte um botao de sinal ja tendo definido uma conta anterior
+            if (calculator.simbolinho != null)
+            {
+                // mesmo que no total exceto por colocar o simbolo clicado para a prox conta
+                calculator.calcular();
+                ResultBin.Text = calculator.total.ToString();
+                calculator.sl = Convert.ToDouble(ResultBin.Text);
+                calculator.valor = calculator.sl;
+                calculator.simbolinho = clicked.Text;
+                somou = true;
+            }
+            // criar o simbolo
+            if (calculator.simbolinho == null && algo) calculator.simbolinho = clicked.Text;
+            // pegar segundo valor ou primeiro valor
+            if (calculator.valor != 0) calculator.valor2 = calculator.sl;
+            else calculator.valor = calculator.sl;
+            simbol = true;
+        }
+
+        private void TotalBin(object sender, EventArgs e)
+        {
+            // testar se existe algum simbolo ativado
+            if (calculator.simbolinho != null)
+            {
+                // pegar o valor escrito
+                calculator.sl = Convert.ToDouble(Result.Text);
+                // usar a funçao da conta
+                calculator.calcular();
+                // digitar o total
+                ResultBin.Text = calculator.total.ToString();
+                // pegar o valor escrito
+                calculator.sl = Convert.ToDouble(Result.Text);
+                // definir que valor sera o valor escrito
+                calculator.valor = calculator.sl;
+                // zerador
+                calculator.simbolinho = null;
+                batata = true;
+                somou = true;
+            }
+
         }
     }
 }

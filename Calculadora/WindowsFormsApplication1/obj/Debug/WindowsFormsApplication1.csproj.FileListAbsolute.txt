@@ -28,3 +28,21 @@ C:\Users\Emanuel Messias\Desktop\Calculadora\WindowsFormsApplication1\obj\Debug\
 C:\Users\seeduc\Downloads\Calculadora\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\seeduc\Downloads\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\seeduc\Downloads\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Calculadora.resources
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Emanuel.Umbelino\Downloads\Calculadora-master\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Calculadora.resources
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\Maneivos\Trabalhos\Git Hub\Calculadora\Calculadora\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
